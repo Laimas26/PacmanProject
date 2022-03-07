@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Uno_kampas" size="0.040000 0.039161" />
+    <ImageTarget name="uno-colors" size="0.055000 0.083983" />
+    <ImageTarget name="uno" size="0.055000 0.083763" />
+    <ImageTarget name="IMG_8850" size="0.150000 0.123363" />
+  </Tracking>
+</QCARConfig>
