@@ -22,9 +22,4 @@ public class CharacterController : MonoBehaviour
             rb.AddForce(Vector3.back);
 
     }
-
-    private void OnTriggerEnter(Collider other){
-    Score.instance.AddPoint();
-    Destroy(gameObject);
-    } 
 }
