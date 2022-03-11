@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 184237893873162218, guid: cc0934e36167ac24d800910d7e3b7862, type: 3}
       propertyPath: m_Name
-      value: Walls_Z
+      value: Walls_Z 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc0934e36167ac24d800910d7e3b7862, type: 3}
