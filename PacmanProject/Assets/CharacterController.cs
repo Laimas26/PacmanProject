@@ -5,30 +5,66 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
 
+    public Rigidbody rb;
     public Animator anim;
-    float speed = 1;
+    public float speed = 1.0f;
 
     void Start()
     {
         
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
 
-        Rigidbody rb = GetComponent<Rigidbody>();
-        if (Input.GetKey(KeyCode.A))
-            rb.AddForce(Vector3.left);
-        if (Input.GetKey(KeyCode.D))
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
+
+        if (movement == Vector3.zero)
         {
-            rb.AddForce(Vector3.right);
-            anim.SetFloat("speed", speed);
+            return;
         }
+
+        Quaternion targetRotation = Quaternion.LookRotation(movement);
+
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+
+        //rb.MoveRotation(targetRotation);
+
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    transform.Rotate(new Vector3(0, 90, 0));
+        //    rb.AddForce(Vector3.left);
+        //    //anim.SetFloat("speed", speed);
+        //}
             
-        if (Input.GetKey(KeyCode.W))
-            rb.AddForce(Vector3.forward);
-        if (Input.GetKey(KeyCode.S))
-            rb.AddForce(Vector3.back);
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    transform.Rotate(new Vector3(0, 270, 0));
+        //    rb.AddForce(Vector3.right);
+        //    //anim.SetFloat("speed", speed);
+        //} 
+        //if (Input.GetKey(KeyCode.W))
+        //{
+        //    transform.Rotate(new Vector3(0, 180, 0));
+        //    rb.AddForce(Vector3.forward);
+        //    //anim.SetFloat("speed", speed);
+        //}
+            
+        //if (Input.GetKey(KeyCode.S))
+        //{
+        //    transform.Rotate(new Vector3(0, 0, 0));
+        //    rb.AddForce(Vector3.back);
+        //    //anim.SetFloat("speed", speed);
+        //}
+
+
+        //if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+        //{
+        //    anim.SetFloat("speed", 0);
+        //}
 
         //speed = Input.GetAxis("Horizontal");
 
