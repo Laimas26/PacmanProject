@@ -37,9 +37,9 @@ public class Score : MonoBehaviour
             HText.text = "NEW HIGHSCORE:" + score.ToString();
             PlayerPrefs.SetInt("highscore", score);
         }
-        if (score == 363)
+        if (score == 10)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }
