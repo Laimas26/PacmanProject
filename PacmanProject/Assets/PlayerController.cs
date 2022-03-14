@@ -19,10 +19,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        var dir = new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized;
-        //var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+        //var dir = new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized;
+        var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
 
         rb.velocity = dir * speed * 0.1f;
+
+        if (dir != Vector3.zero)
+        {
+            transform.rotation.SetLookRotation(dir);
+        }
     }
 
     //private void FixedUpdate()
