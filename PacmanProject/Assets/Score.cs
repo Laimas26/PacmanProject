@@ -34,7 +34,7 @@ public class Score : MonoBehaviour
 
         if (highscore < score)
         {
-            HText.text = "NEW HIGHSCORE: " + score.ToString();
+            HText.text = "NEW HIGHSCORE:" + score.ToString();
             PlayerPrefs.SetInt("highscore", score);
         }
         if (score == 363)
