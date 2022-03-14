@@ -51,7 +51,7 @@ public bool playerInSightRange;
 
 public void Awake()
 {
-    player = GameObject.Find("Pekmen").transform;
+    player = GameObject.Find("njupekmen no eyes").transform;
     agent = GetComponent<NavMeshAgent>();
 }
 private void Update()
